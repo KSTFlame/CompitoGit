@@ -7,13 +7,13 @@ public class ScoreManager : MonoBehaviour
 {
 
     public Text highscore;
-    private int score;
+    private int scoreNumber;
 
     // Start is called before the first frame update
     void Start()
     {
         highscore.text = "Highscore: " + PlayerPrefs.GetInt("Highscore").ToString();
-        score = PlayerPrefs.GetInt("Highscore");
+        scoreNumber = PlayerPrefs.GetInt("Highscore");
     }
 
     // Update is called once per frame
@@ -21,9 +21,9 @@ public class ScoreManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            score++;
-            highscore.text = "Highscore: " + score.ToString();
-            PlayerPrefs.SetInt("Highscore", score);
+            scoreNumber++;
+            highscore.text = "Highscore: " + scoreNumber.ToString();
+            PlayerPrefs.SetInt("Highscore", scoreNumber);
         }
     }
 }
